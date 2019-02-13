@@ -1,0 +1,4 @@
+./gradlew build && java -jar build/libs/gs-spring-boot-0.1.0.jar
+If you are using Maven, execute:
+mvn package -Dmaven.test.skip=true
+java -jar target/fruit-app-1.0-SNAPSHOT.jar

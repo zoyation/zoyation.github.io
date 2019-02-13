@@ -1,0 +1,49 @@
+spring:
+    thymeleaf:
+        cache: false
+    datasource:
+        name: fruit_main
+        url: jdbc:mysql://localhost:3306/fruit_man?serverTimezone=UTC&characterEncoding=utf8&useSSL=true
+        username: root
+        password: 123456
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    messages:
+        encoding: UTF-8
+        basename: messages/messages
+        cache-seconds: -1
+    active: config
+#mybatis:
+#    type-aliases-package: com.fruit.app.model
+#    mapper-locations: classpath:mapper/*.xml
+#    mapper:
+        #mappers:
+        #    - tk.mybatis.springboot.util.MyMapper
+#        not-empty: false
+ #       identity: MYSQL
+
+#    pagehelper:
+ #       helperDialect: mysql
+  #      reasonable: true
+   #     supportMethodsArguments: true
+    #    params: count=countSql
+
+#除了上面常见的两项配置，还有：
+#  mybatis.config：mybatis-config.xml配置文件的路径
+#  mybatis.typeHandlersPackage：扫描typeHandlers的包
+#  mybatis.checkConfigLocation：检查配置文件是否存在
+#  mybatis.executorType：设置执行模式（SIMPLE, REUSE, BATCH），默认为SIMPLE
